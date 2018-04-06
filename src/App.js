@@ -23,25 +23,32 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div className="pure-button">
-          <button
+        <div className="btn">
+          <a
             style={{
-              color: this.state.sortOrder === null ? 'red' : 'black',
+              color: this.state.sortOrder === null ? 'black' : 'white',
               fontWeight: this.state.sortOrder === null ? 'bold' : 'normal'
             }}
             onClick={() => this.setState({ sortOrder: null })}
           >
             Natural Sorting
-          </button>
-          <button
+          </a>
+        </div>
+        <div
+          style={{
+            padding: '10px'
+          }}
+        >
+          <a
+            className="btn"
             style={{
-              color: this.state.sortOrder === 'added' ? 'red' : 'black',
+              color: this.state.sortOrder === 'added' ? 'black' : 'white',
               fontWeight: this.state.sortOrder === 'added' ? 'bold' : 'normal'
             }}
             onClick={() => this.setState({ sortOrder: 'added' })}
           >
             Time Sorting
-          </button>
+          </a>
         </div>
         <ul>
           {this.state.songs
